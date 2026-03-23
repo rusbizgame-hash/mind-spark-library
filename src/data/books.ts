@@ -168,4 +168,10 @@ export const resources: Resource[] = [
     url: "https://ratriz.ru",
     description: "Официальный сайт Российской ассоциации ТРИЗ",
   },
+  {
+    id: "r3",
+    name: "Анна Обухова — Нейробиология продуктивности",
+    url: "https://rutube.ru/video/98296064c8270d70d8c4243fed6f6971/",
+    description: "Интервью о нейробиологии продуктивности и эффективной работе мозга",
+  },
 ];
