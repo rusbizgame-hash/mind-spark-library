@@ -138,6 +138,14 @@ export const books: Book[] = [
     category: "Аргументация",
     ozonUrl: "https://www.ozon.ru/product/iskusstvo-spora-o-teorii-i-praktike-spora-s-i-povarnin-reprint-izdaniya-1923g-povarnin-754393260/?at=gpt4WVDWPi1p4WzZfZ6xowzTJyjAQWCOkojxoUBJjmqq",
   },
+  {
+    id: "15",
+    title: "Психология убеждения: 60 доказанных способов быть убедительным",
+    author: "Роберт Чалдини",
+    description: "60 научно доказанных методов убеждения от ведущего эксперта в области влияния.",
+    category: "Аргументация",
+    ozonUrl: "https://www.ozon.ru/product/psihologiya-ubezhdeniya-60-dokazannyh-sposobov-byt-ubeditelnym-neon-pocketbooks-chaldini-robert-1551780095/?at=LZtlOE2DxsPMZkBwux4x72KCxnwKm0hkAKo0KtQx3DRj",
+  },
 ];
 
 export interface Resource {
