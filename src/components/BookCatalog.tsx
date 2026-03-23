@@ -48,8 +48,8 @@ const BookCatalog = () => {
           Полезные ресурсы
         </h2>
         <div className="mt-8 grid gap-6 sm:grid-cols-2">
-          {resources.map((res) => (
-            <ResourceCard key={res.id} res={res} index={i} />
+          {resources.map((res, i) => (
+            <ResourceItem key={res.id} res={res} index={i} />
           ))}
         </div>
       </div>
