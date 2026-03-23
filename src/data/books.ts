@@ -5,7 +5,32 @@ export interface Book {
   description: string;
   category: string;
   ozonUrl: string;
+  coverImage?: string;
 }
+
+import cover1 from "@/assets/covers/book-1.jpg";
+import cover2 from "@/assets/covers/book-2.jpg";
+import cover3 from "@/assets/covers/book-3.jpg";
+import cover4 from "@/assets/covers/book-4.jpg";
+import cover5 from "@/assets/covers/book-5.jpg";
+import cover6 from "@/assets/covers/book-6.jpg";
+import cover7 from "@/assets/covers/book-7.jpg";
+import cover8 from "@/assets/covers/book-8.jpg";
+import cover9 from "@/assets/covers/book-9.jpg";
+import cover10 from "@/assets/covers/book-10.jpg";
+import cover11 from "@/assets/covers/book-11.jpg";
+import cover12 from "@/assets/covers/book-12.jpg";
+import cover13 from "@/assets/covers/book-13.jpg";
+import cover14 from "@/assets/covers/book-14.jpg";
+import cover15 from "@/assets/covers/book-15.jpg";
+
+const coverMap: Record<string, string> = {
+  "1": cover1, "2": cover2, "3": cover3, "4": cover4, "5": cover5,
+  "6": cover6, "7": cover7, "8": cover8, "9": cover9, "10": cover10,
+  "11": cover11, "12": cover12, "13": cover13, "14": cover14, "15": cover15,
+};
+
+export const getBookCover = (id: string): string | undefined => coverMap[id];
 
 export const categories = [
   "Все",
