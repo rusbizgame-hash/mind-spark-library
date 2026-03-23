@@ -9,8 +9,8 @@ const Hero = () => {
 
       <div className="relative z-10 mx-auto max-w-3xl text-center">
         <h1 className="text-4xl font-bold leading-tight tracking-tight text-foreground sm:text-5xl md:text-6xl">
-          Прокачай свое{" "}
-          <span className="text-primary">мышление</span>
+          Библиотека{" "}
+          <span className="text-primary">мышления</span>
         </h1>
 
         <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
