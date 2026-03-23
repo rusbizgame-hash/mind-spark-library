@@ -1,6 +1,7 @@
 import { useState } from "react";
-import { books, categories, type Category } from "@/data/books";
+import { books, categories, resources, type Category } from "@/data/books";
 import BookCard from "@/components/BookCard";
+import { ExternalLink } from "lucide-react";
 
 const BookCatalog = () => {
   const [activeCategory, setActiveCategory] = useState<Category>("Все");
@@ -38,6 +39,32 @@ const BookCatalog = () => {
         {filtered.map((book) => (
           <BookCard key={book.id} book={book} />
         ))}
+      </div>
+
+      {/* Resources section */}
+      <div className="mt-20">
+        <h2 className="text-center text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+          Полезные ресурсы
+        </h2>
+        <div className="mt-8 grid gap-6 sm:grid-cols-2">
+          {resources.map((res) => (
+            <a
+              key={res.id}
+              href={res.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center justify-between rounded-lg border border-border/50 bg-card p-5 transition-all hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5"
+            >
+              <div>
+                <h3 className="text-base font-semibold text-foreground group-hover:text-primary transition-colors">
+                  {res.name}
+                </h3>
+                <p className="mt-1 text-sm text-muted-foreground">{res.description}</p>
+              </div>
+              <ExternalLink className="h-5 w-5 shrink-0 text-muted-foreground group-hover:text-primary transition-colors" />
+            </a>
+          ))}
+        </div>
       </div>
     </section>
   );
