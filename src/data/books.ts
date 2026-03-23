@@ -174,4 +174,34 @@ export const resources: Resource[] = [
     url: "https://rutube.ru/video/98296064c8270d70d8c4243fed6f6971/",
     description: "Интервью о нейробиологии продуктивности и эффективной работе мозга",
   },
+  {
+    id: "r4",
+    name: "Тест самодиагностики депрессии (для подростков)",
+    url: "https://dszn.ru/testing/depres",
+    description: "⚠️ Требует последующей валидации у терапевта!",
+  },
+  {
+    id: "r5",
+    name: "Тест Бека — диагностика депрессии (для взрослых)",
+    url: "https://yasno.live/tests/depressiya-beka",
+    description: "Шкала депрессии Бека для самодиагностики у взрослых",
+  },
+  {
+    id: "r6",
+    name: "Тест тревоги (HADS)",
+    url: "https://yasno.live/tests/hads",
+    description: "Госпитальная шкала тревоги и депрессии",
+  },
+  {
+    id: "r7",
+    name: "Тест на когнитивные искажения",
+    url: "https://yasno.live/tests/kognitivnye-narusheniya",
+    description: "Выявление когнитивных нарушений и искажений мышления",
+  },
+  {
+    id: "r8",
+    name: "Стратегии реагирования на стресс (опросник Лазаруса)",
+    url: "https://yasno.live/tests/oprosnik-lazarusa-koping-strategii",
+    description: "Определение ваших копинг-стратегий при стрессе",
+  },
 ];
