@@ -2,17 +2,30 @@ import { BookOpen, ExternalLink } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import type { Book } from "@/data/books";
+import { getBookCover } from "@/data/books";
 
 interface BookCardProps {
   book: Book;
 }
 
 const BookCard = ({ book }: BookCardProps) => {
+  const cover = getBookCover(book.id);
+
   return (
     <Card className="group flex flex-col overflow-hidden border-border/50 bg-card transition-all duration-300 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5">
-      {/* Cover placeholder */}
-      <div className="flex h-48 items-center justify-center bg-secondary/50">
-        <BookOpen className="h-12 w-12 text-muted-foreground/40 transition-colors group-hover:text-primary/60" />
+      {/* Cover */}
+      <div className="relative h-48 overflow-hidden bg-secondary/50">
+        {cover ? (
+          <img
+            src={cover}
+            alt={book.title}
+            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+          />
+        ) : (
+          <div className="flex h-full items-center justify-center">
+            <BookOpen className="h-12 w-12 text-muted-foreground/40 transition-colors group-hover:text-primary/60" />
+          </div>
+        )}
       </div>
 
       <CardContent className="flex flex-1 flex-col p-5">
