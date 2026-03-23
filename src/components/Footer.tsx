@@ -1,4 +1,13 @@
-import { BookOpen, Heart } from "lucide-react";
+import { BookOpen, Heart, ExternalLink } from "lucide-react";
+import { resources } from "@/data/books";
+
+const socialLinks = [
+  { name: "Telegram", url: "https://t.me/coritmer" },
+  { name: "Дзен", url: "https://dzen.ru/coritmer" },
+  { name: "ВКонтакте", url: "https://vk.com/coritmer" },
+  { name: "Рутуб", url: "https://rutube.ru/channel/58862919/" },
+  { name: "МАХ", url: "https://max.ru/id781401280702_biz" },
+];
 
 const Footer = () => {
   return (
@@ -22,15 +31,25 @@ const Footer = () => {
             Ссылки на книги ведут в магазин Ozon, а ресурсы — на их официальные сайты.
           </p>
 
+          {/* Resources */}
+          <div className="flex flex-wrap justify-center gap-3">
+            {resources.map((res) => (
+              <a
+                key={res.id}
+                href={res.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 rounded-full bg-secondary px-4 py-2 text-xs font-medium text-secondary-foreground transition-colors hover:bg-primary hover:text-primary-foreground"
+              >
+                {res.name}
+                <ExternalLink className="h-3 w-3" />
+              </a>
+            ))}
+          </div>
+
           {/* Social links */}
           <div className="flex flex-wrap justify-center gap-3">
-            {[
-              { name: "Telegram", url: "https://t.me/" },
-              { name: "Дзен", url: "https://dzen.ru/" },
-              { name: "ВКонтакте", url: "https://vk.com/" },
-              { name: "Рутуб", url: "https://rutube.ru/" },
-              { name: "МАХ", url: "#" },
-            ].map((link) => (
+            {socialLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.url}
