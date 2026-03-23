@@ -3,16 +3,25 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import type { Book } from "@/data/books";
 import { getBookCover } from "@/data/books";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 
 interface BookCardProps {
   book: Book;
+  index?: number;
 }
 
-const BookCard = ({ book }: BookCardProps) => {
+const BookCard = ({ book, index = 0 }: BookCardProps) => {
   const cover = getBookCover(book.id);
+  const { ref, isVisible } = useScrollReveal<HTMLDivElement>();
 
   return (
-    <Card className="group flex flex-col overflow-hidden border-border/50 bg-card transition-all duration-300 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5">
+    <Card
+      ref={ref}
+      className={`group flex flex-col overflow-hidden border-border/50 bg-card transition-all duration-500 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 ${
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+      }`}
+      style={{ transitionDelay: `${index * 80}ms` }}
+    >
       {/* Cover */}
       <div className="relative h-48 overflow-hidden bg-secondary/50">
         {cover ? (

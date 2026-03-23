@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { books, categories, resources, type Category } from "@/data/books";
 import BookCard from "@/components/BookCard";
 import { ExternalLink } from "lucide-react";
@@ -36,8 +37,8 @@ const BookCatalog = () => {
 
       {/* Book grid */}
       <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {filtered.map((book) => (
-          <BookCard key={book.id} book={book} />
+        {filtered.map((book, i) => (
+          <BookCard key={book.id} book={book} index={i} />
         ))}
       </div>
 
@@ -48,21 +49,7 @@ const BookCatalog = () => {
         </h2>
         <div className="mt-8 grid gap-6 sm:grid-cols-2">
           {resources.map((res) => (
-            <a
-              key={res.id}
-              href={res.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group flex items-center justify-between rounded-lg border border-border/50 bg-card p-5 transition-all hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5"
-            >
-              <div>
-                <h3 className="text-base font-semibold text-foreground group-hover:text-primary transition-colors">
-                  {res.name}
-                </h3>
-                <p className="mt-1 text-sm text-muted-foreground">{res.description}</p>
-              </div>
-              <ExternalLink className="h-5 w-5 shrink-0 text-muted-foreground group-hover:text-primary transition-colors" />
-            </a>
+            <ResourceCard key={res.id} res={res} index={i} />
           ))}
         </div>
       </div>
